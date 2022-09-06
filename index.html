@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="title">
+      <h1>Create Account</h1>
+    </div>
+
+    <form action="#" class="form" method="post">
+      <div class="form__first-name flex">
+        <label for="first-name" class="label">First Name*</label>
+        <input type="text" class="input" id="first-name" placeholder="enter your first name">
+      </div>
+
+      <div class="form__last-name flex">
+        <label for="last-name" class="label">Last Name</label>
+        <input type="text" class="input" id="last-name" placeholder="enter your last name">
+      </div>
+
+      <div class="form__email flex wide">
+        <label for="email" class="label">Email*</label>
+        <input type="email" class="input" id="email" placeholder="enter your email">
+      </div>
+
+      <div class="form__password flex">
+        <label for="password" class="label">Password*</label>
+        <input type="password" class="input" id="password" placeholder="enter your password">
+      </div>
+
+      <div class="form__confirm flex">
+        <label for="confirm" class="label">Confirm Password*</label>
+        <input type="password" class="input" id="confirm" placeholder="enter your password again">
+      </div>
+
+      <div class="form__gender flex">
+        <p class="label">Gender:</p>
+        <div class="radio-wrapper">
+          <input type="radio" name="gender" id="male" value="Male">
+          <label for="male">Male</label>
+          <input type="radio" name="gender" id="female" value="Female">
+          <label for="female">Female</label>
+        </div>
+      </div>
+
+      <div class="form__hobbies flex">
+        <p class="label">Hobbies</p>
+        <div class="radio-wrapper">
+          <input type="checkbox" name="music" id="music" value="Music">
+          <label for="music">Music</label>
+          <input type="checkbox" name="sports" id="sports" value="Sports">
+          <label for="sports">Sports</label>
+          <input type="checkbox" name="travel" id="travel" value="Travel">
+          <label for="travel">Travel</label>
+          <input type="checkbox" name="movies" id="movies" value="Movies">
+          <label for="movies">Movies</label>
+        </div>
+      </div>
+
+      <div class="form__source flex">
+        <label class="label" for="source">Source of Income</label>
+        <select class="form__source-select" name="source" id="source">
+          <option value="employed">Employed</option>
+          <option value="self employed">Self Employed</option>
+          <option value="investing">Investing</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form__income flex">
+        <label class="label" for="income">Annual Income</label>
+        <div>
+          <input type="range" name=income id="income" value="20" min="20" max="300" oninput="rangevalue.value=value+'K'">
+          <output id="rangevalue">20K</output>
+        </div>
+      </div>
+
+      <div class="form__picture flex">
+        <label class="label" for="picture">Upload Profile Picture</label>
+        <input class="button" type="file" name="picture" id="picture" accept="image/*">
+      </div>
+
+      <div class="form__age flex">
+        <label class="label" for="age">Age*</label>
+        <input class="input" type="number" name="age" id="age" value="18">
+      </div>
+      
+      <div class="form__textarea flex wide">
+        <label class="label" for="bio">Bio</label>
+        <textarea class="input" name="bio" id="bio"></textarea>
+      </div>
+
+      <div class="form__error"></div>
+
+      <input type="submit" class="submit-btn" value="Create" id="submitBtn">
+    </form>
+    <div class="footer"></div>
+  </main>
+</body>
+</html>

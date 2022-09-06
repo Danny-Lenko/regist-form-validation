@@ -1,0 +1,181 @@
+$color-body: #385e6e
+$color-label: #00b98f
+$color-bcg: #fbfbfb
+
+body
+  font-family: sans-serif
+  background-color: $color-body
+  display: flex
+  line-height: 1
+  color: $color-body
+  padding: 0 2rem
+
+main
+  max-width: 700px
+  background-color: $color-bcg
+  margin: 2rem auto
+  border-radius: 10px
+  position: relative
+
+.flex
+  display: flex
+  flex-direction: column
+
+.title
+  background-color: #eff0f1
+  color: $color-body
+  border-top-right-radius: 10px
+  border-top-left-radius: 10px
+  text-align: center
+  padding: 1rem 0
+  border-bottom: 1px solid $color-body
+
+.label
+  color: $color-label
+  line-height: 1.2
+  font-weight: 600
+
+.input
+  padding: 0.2rem 0.4rem
+  border-radius: 5px
+  border: 1px solid lightgrey
+
+::placeholder
+  color: lightgrey
+  opacity: 1
+
+.wide
+  grid-column: span 2
+
+.radio-wrapper
+  display: flex
+  gap: 0.2em
+  input
+    width: 0.8em
+    margin: 0
+  label
+    margin-right: 0.4em
+
+.form
+  display: grid
+  grid-template-columns: 1fr 1fr
+  column-gap: 1rem
+  row-gap: 1rem
+  padding: 2rem
+
+  // .form__source
+  &__source
+    &-select
+      border: 1px solid lightgrey
+      border-radius: 5px
+      padding: 0.4rem 0.2rem
+
+  // .form__income
+  &__income
+    div
+      display: flex
+      justify-content: space-between
+    output
+      background: $color-label
+      padding: 0 0.3rem
+      width: 53px
+      text-align: end
+      border-radius: 3px
+      color: #fff
+      font-size: 1.2rem
+    input
+      -webkit-appearance: none
+      -moz-appearance: none
+      appearance: none
+      width: 240px
+      background-color: $color-bcg
+      &:focus
+        outline: none
+      &::-webkit-slider-thumb
+        -webkit-appearance: none
+      &::-moz-range-thumb
+        border: none
+      @mixin track-style
+        height: 5px
+        border-radius: 10px
+        box-shadow: inset -2px -2px 6px white, inset 2px 2px 8px black
+      @mixin thumb-style
+        position: relative
+        top: -100%
+        width: 14px
+        height: 14px
+        background: linear-gradient(-45deg,rgba(lightgrey, 1),rgba(white, 1))
+        border-radius: 50%
+        border: 1px solid rgba(grey, 0.5)
+        cursor: e-resize
+      &::-webkit-slider-runnable-track
+        @include track-style
+      &::-webkit-slider-thumb
+        @include thumb-style
+      &::-moz-range-track
+        @include track-style
+      &::-moz-range-thumb
+        @include thumb-style
+
+  // .form__textarea
+  &__textarea
+    textarea
+      height: 100px
+
+  &__error
+    h3
+      background-color: red
+      padding: 0.2rem 0.4rem
+      color: rgba(255, 255, 255, 0.85)
+    li
+      color: red
+    h4
+      color: #00b98f
+      text-transform: uppercase
+      width: 100%
+      text-align: center
+      letter-spacing: 1.5px
+
+  // .form__submit
+  .submit-btn
+    position: absolute
+    bottom: 1rem
+    right: 2rem
+    line-height: 1
+    padding: 0.6rem 1rem
+    border: none
+    border-radius: 5px
+    background-color: $color-label
+    color: #fff
+    font-weight: 600
+    cursor: pointer
+
+.footer
+  height: 4rem
+  background-color: #eff0f1
+  border-bottom-left-radius: 10px
+  border-bottom-right-radius: 10px
+  border-top: 1px solid $color-body
+
+// ----------------------------------- media queries
+
+@media(max-width: 800px)
+  .form
+    display: flex
+    flex-direction: column
+    width: 77vw
+    &__income
+      div
+        flex-direction: column
+        row-gap: 0.5rem
+
+  .radio-wrapper
+    display: grid
+    max-width: 400px
+    grid-template-columns: 1fr 3fr 1fr 3fr
+    column-gap: 0
+
+
+
+
+
